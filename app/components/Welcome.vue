@@ -1,10 +1,10 @@
 <template>
     <Page>
         <StackLayout>
-        <Image  width="70%" style="margin-top: 30px; margin-bottom: 50px;" src="~/assets/images/login-screen.png" stretch="aspectFit"/>
+        <Image  width="70%" style="margin-top: 30px; margin-bottom: 50px;" src="~/assets/images/Work-from-home.png" stretch="aspectFit"/>
             <Label class="text-2xl text-center font-bold" text="Hello"/>
             <Label class="text-gray-600 text-center mt-2 mb-5" text="Welcome to Applications. Please login or register" textWrap="true"/>
-          <Button class="bg-indigo-600 text-white font-bold py-2 px-4 rounded-full mx-10 my-2" text="Login"/>
+          <Button class="bg-indigo-600 text-white font-bold py-2 px-4 rounded-full mx-10 my-2" text="Login" @tap="onLoginTap"></Button>
           <Button class="bg-white text-indigo-600 border border-indigo-600 font-bold py-2 px-4 rounded-full mx-10 my-2" text="Sign Up"/>
 
           <Label class="text-gray-600 text-center mt-10" text="Login using" textWrap="true"/>
@@ -18,26 +18,23 @@
 </template>
 
 <script>
+import Login from './Login'
+
   export default {
     computed: {
       message() {
         return "Blank {N}-Vue app";
       }
+    },
+
+    methods: {
+      onLoginTap() {
+        try {
+          this.$navigateTo(Login);
+        } catch(e) {
+          console.log(e)
+        }
+      }
     }
   };
 </script>
-
-<style scoped lang="scss">
-    @import '@nativescript/theme/scss/variables/blue';
-
-    // Custom styles
-    // .fas {
-    //     @include colorize($color: accent);
-    // }
-
-    .info {
-        font-size: 20;
-        horizontal-align: center;
-        vertical-align: center;
-    }
-</style>
