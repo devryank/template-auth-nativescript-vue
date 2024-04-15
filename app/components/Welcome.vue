@@ -5,7 +5,7 @@
             <Label class="text-2xl text-center font-bold" text="Hello"/>
             <Label class="text-gray-600 text-center mt-2 mb-5" text="Welcome to Applications. Please login or register" textWrap="true"/>
           <Button class="bg-indigo-600 text-white font-bold py-2 px-4 rounded-full mx-10 my-2" text="Login" @tap="onLoginTap"></Button>
-          <Button class="bg-white text-indigo-600 border border-indigo-600 font-bold py-2 px-4 rounded-full mx-10 my-2" text="Sign Up"/>
+          <Button class="bg-white text-indigo-600 border border-indigo-600 font-bold py-2 px-4 rounded-full mx-10 my-2" text="Sign Up" @tap="onRegisterTap"/>
 
           <Label class="text-gray-600 text-center mt-10" text="Login using" textWrap="true"/>
           <GridLayout class="mt-3" rows="*" columns="auto, auto, auto" columnSpacing="25" verticalAlignment="center" horizontalAlignment="center">
@@ -19,6 +19,7 @@
 
 <script>
 import Login from './Login'
+import Register from './Register'
 
   export default {
     computed: {
@@ -29,11 +30,10 @@ import Login from './Login'
 
     methods: {
       onLoginTap() {
-        try {
           this.$navigateTo(Login);
-        } catch(e) {
-          console.log(e)
-        }
+      },
+      onRegisterTap() {
+          this.$navigateTo(Register);
       }
     }
   };

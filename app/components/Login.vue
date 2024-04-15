@@ -17,12 +17,19 @@
                 <Button row="1" col="1" class="bg-indigo-600 text-white font-bold py-1 px-3 rounded-full my-2 w-24" text="Login"/> 
             </GridLayout>
 
+            <Label class="mt-5 mb-10 text-center text-gray-600" text="<< Kembali ke halaman utama" @tap="onBackTap"/>
+
         </StackLayout>
     </Page> 
 </template>
 
 <script>
+    import Welcome from './Welcome'
 export default {
-    
+    methods: {
+        onBackTap() {
+            this.$navigateTo(Welcome)
+        }
+    }
 }
 </script>
